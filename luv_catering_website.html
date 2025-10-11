@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luv Catering - Pure Veg Catering in Mumbai | Traditional Taste, Made with Love</title>
+    <meta name="description" content="Premium pure vegetarian catering services in Mumbai. Home-style authentic Indian food prepared by Head Chef Shankar Maharaj. Book now for weddings, parties & events.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c2c2c;
+            line-height: 1.6;
+            background: #faf8f5;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #8b6f47 0%, #6d5838 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-badge {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-badge svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-tagline {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 111, 71, 0.85), rgba(109, 88, 56, 0.9)), 
+                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600') center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #faf8f5;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .veg-badge {
+            display: inline-block;
+            background: white;
+            color: #2e7d32;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            border: 3px solid #2e7d32;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #8b6f47;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid #8b6f47;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #8b6f47;
+            color: white;
+        }
+        
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Special handling for gallery and testimonials */
+        #gallery,
+        .testimonials-wrapper {
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #d4542a;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #8b6f47;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 3rem;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .chef-card {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 3px solid #d4542a;
+            text-align: center;
+        }
+        
+        .chef-card h3 {
+            color: #d4542a;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chef-card .title {
+            color: #8b6f47;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .chef-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #d4542a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-header {
+            background: linear-gradient(135deg, #d4542a 0%, #b8401f 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .menu-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .menu-body {
+            padding: 2rem;
+        }
+        
+        .menu-body ul {
+            list-style: none;
+        }
+        
+        .menu-body li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #666;
+        }
+        
+        .menu-body li:before {
+            content: "✓ ";
+            color: #2e7d32;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        
+        /* Gallery */
+        #gallery {
+            background: #faf8f5;
+            padding: 4rem 0;
+            margin: 4rem auto;
+            width: 100%;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+        
+        .gallery-container h2,
+        .gallery-container .section-subtitle {
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: 4rem auto;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #d4542a;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            color: #d4542a;
+            font-weight: 700;
+        }
+        
+        .stars {
+            color: #ffa500;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #8b6f47 0%, #6d5838 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin: 4rem auto;
+        }
+        
+        .contact h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+        }
+        
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            
+            .veg-badge {
+                font-size: 0.9rem;
+                padding: 0.4rem 1rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .about {
+                padding: 2rem 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-text p {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .menu-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .menu-price {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-container {
+                padding: 3rem 1.5rem;
+                margin: 0 auto;
+                width: calc(100% - 2rem);
+                border-radius: 15px;
+            }
+            
+            #gallery {
+                margin: 3rem 0;
+                padding: 0 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-item img {
+                height: 200px;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials {
+                margin: 3rem 1rem;
+            }
+            
+            .contact {
+                padding: 3rem 1.5rem;
+                margin: 3rem 1rem;
+                border-radius: 15px;
+            }
+            
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .contact-item {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            
+            footer {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .logo-badge {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-name {
+                font-size: 1.4rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.55rem;
+            }
+            
+            nav {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .chef-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .menu-header {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-badge">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer Circle -->
+                        <circle cx="60" cy="60" r="55" fill="none" stroke="white" stroke-width="3"/>
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="white" stroke-width="1.5"/>
+                        
+                        <!-- Decorative leaves top -->
+                        <path d="M 52 20 Q 49 15 46 17 Q 49 19 52 20" fill="white"/>
+                        <path d="M 68 20 Q 71 15 74 17 Q 71 19 68 20" fill="white"/>
+                        
+                        <!-- Decorative leaves bottom -->
+                        <path d="M 52 100 Q 49 105 46 103 Q 49 101 52 100" fill="white"/>
+                        <path d="M 68 100 Q 71 105 74 103 Q 71 101 68 100" fill="white"/>
+                        
+                        <!-- Small decorative dots -->
+                        <circle cx="10" cy="60" r="2" fill="white"/>
+                        <circle cx="110" cy="60" r="2" fill="white"/>
+                        
+                        <!-- Main Text LUV -->
+                        <text x="60" y="62" font-family="Georgia, serif" font-size="28" fill="white" text-anchor="middle" font-weight="700">
+                            LUV
+                        </text>
+                        
+                        <!-- CATERING text -->
+                        <text x="60" y="78" font-family="Georgia, serif" font-size="10" fill="white" text-anchor="middle" letter-spacing="3">
+                            CATERING
+                        </text>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">Luv Catering</span>
+                    <span class="logo-tagline">TRADITIONAL TASTE, MADE WITH LOVE</span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="veg-badge">🌿 100% PURE VEGETARIAN 🌿</div>
+        <h1>Authentic Home-Style Taste<br>For Every Occasion</h1>
+        <p class="subtitle">Prepared with Love by Head Chef Shankar Maharaj</p>
+        <p class="tagline">Traditional Taste, Made with Love</p>
+        <a href="#contact" class="cta-button">Book Your Event Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Welcome to Luv Catering</h2>
+        <p class="section-subtitle">Mumbai's Trusted Name in Pure Vegetarian Catering Since 2020</p>
+        
+        <div class="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Luv Catering, we believe that food is not just about taste—it's about creating memorable experiences. Every dish we serve carries the warmth of home-cooked meals and the authenticity of traditional Indian flavors.</p>
+                    
+                    <p>We specialize in <strong>100% pure vegetarian catering</strong> for all occasions—weddings, corporate events, birthday parties, religious ceremonies, and family gatherings. Our commitment to hygiene, quality ingredients, and authentic recipes has made us a trusted choice for Mumbai families.</p>
+                    
+                    <p>What sets us apart is our dedication to preserving traditional cooking methods while maintaining the highest standards of food safety and presentation.</p>
+                </div>
+                
+                <div class="chef-card">
+                    <h3>Chef Shankar Maharaj</h3>
+                    <p class="title">Head Chef & Culinary Expert</p>
+                    <p>With over 15 years of experience in traditional Indian vegetarian cuisine, Chef Shankar Maharaj brings authentic flavors and time-honored recipes to every event. His expertise in regional specialties—from Maharashtrian delicacies to Rajasthani feasts—ensures your guests experience the true taste of India.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>100% Pure Veg</h3>
+                <p>Completely vegetarian kitchen with no cross-contamination. Perfect for religious and cultural events.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Hygienic Standards</h3>
+                <p>ISO-standard kitchen practices, fresh ingredients, and regular quality checks ensure safe, clean food.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>Expert Chef</h3>
+                <p>Led by Head Chef Shankar Maharaj with 15+ years of experience in authentic Indian vegetarian cuisine.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable Pricing</h3>
+                <p>Premium quality at honest prices. Transparent quotes with no hidden costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu Options</h2>
+        <p class="section-subtitle">Customizable packages for every occasion and budget</p>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-header">
+                    <h3>Traditional Thali</h3>
+                    <p class="menu-price">₹250-350 / plate</p>
+                </div>
+                <div class="menu-body">
+                    <ul>
+                        <li>2 Sabzi (Seasonal Vegetables)</li>
+                        <li>Dal (Lentils)</li>
+                        <li>Rice / Jeera Rice</li>
+                        <li>4 Roti / Chapati</li>
+                        <li>Papad & Pickle</li>
+                        <li>Salad</li>
+                        <li>Sweet (Gulab Jamun / Kheer)</li>
+                        <li>Buttermilk / Chaas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-header">
+                    <h3>Maharashtrian Special</h3>
+                    <p class="menu-price">₹300-400 / plate</p>
+                </div>
+                <div class="menu-body">
+                    <ul>
+                        <li>Varan Bhaat</li>
+                        <li>Bharli Vangi</li>
+                        <li>Matki Usal</li>
+                        <li>Puran Poli / Chapati</li>
+                        <li>Batata Bhaji</li>
+                        <li>Koshimbir (Salad)</li>
+                        <li>Lonche & Papad</li>
+                        <li>Shrikhand / Basundi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-header">
+                    <h3>Rajasthani Feast</h3>
+                    <p class="menu-price">₹350-450 / plate</p>
+                </div>
+                <div class="menu-body">
+                    <ul>
+                        <li>Dal Baati Churma</li>
+                        <li>Gatte Ki Sabzi</li>
+                        <li>Ker Sangri</li>
+                        <li>Bajra Roti / Missi Roti</li>
+                        <li>Papad & Achaar</li>
+                        <li>Lassi</li>
+                        <li>Mawa Kachori</li>
+                        <li>Moong Dal Halwa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-header">
+                    <h3>Wedding Special</h3>
+                    <p class="menu-price">₹400-600 / plate</p>
+                </div>
+                <div class="menu-body">
+                    <ul>
+                        <li>Welcome Drink</li>
+                        <li>Live Counter (Pani Puri / Chaat)</li>
+                        <li>3 Premium Sabzi</li>
+                        <li>Dal Makhani / Dal Tadka</li>
+                        <li>Jeera Rice / Veg Pulao</li>
+                        <li>Naan / Roti / Paratha</li>
+                        <li>Raita & Salad Bar</li>
+                        <li>2 Desserts + Ice Cream</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.2rem; color: #666;">All menus are customizable based on your preferences and guest count</p>
+            <a href="#contact" class="cta-button" style="margin-top: 1rem;">Request Custom Menu</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="gallery-container">
+            <h2>Our Work</h2>
+            <p class="section-subtitle">A glimpse of the delicious food we create</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500" alt="Indian Thali">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500" alt="Traditional Dishes">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500" alt="Dal Baati">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500" alt="Indian Sweets">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The food at my daughter's wedding was exceptional! Chef Shankar Maharaj's traditional recipes reminded us of home. Every guest praised the authentic taste and quality."</p>
+                <p class="testimonial-author">— Mrs. Sharma, Andheri</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Luv Catering catered our office event for 200 people. The food was delicious, service was prompt, and everything was perfectly hygienic. Highly recommended!"</p>
+                <p class="testimonial-author">— Rajesh Patel, Corporate Client</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Pure vegetarian with no compromise on taste! The Maharashtrian thali was outstanding. Will definitely book again for future events."</p>
+                <p class="testimonial-author">— Priya Kulkarni, Dadar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Ready to Book Your Event?</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Let's make your occasion memorable with authentic vegetarian flavors</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                    <strong>Call Us:</strong><br>
+                    +91-XXXXXXXXXX
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                    <strong>Email:</strong><br>
+                    info@luvcatering.com
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                    <strong>Location:</strong><br>
+                    Mumbai, Maharashtra
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Luv%20Catering%2C%20I%20want%20to%20book%20catering%20for%20my%20event" class="whatsapp-button" target="_blank">
+            💬 WhatsApp Us Now
+        </a>
+        
+        <p style="margin-top: 2rem; font-size: 1.1rem;">Get instant quote • Free consultation • Flexible booking</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Luv Catering</strong></p>
+        <p>100% Pure Vegetarian Catering Services in Mumbai</p>
+        <p style="margin-top: 1rem;">Traditional Taste, Made with Love | Since 2020</p>
+        <p style="margin-top: 1.5rem; opacity: 0.7;">© 2025 Luv Catering. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
